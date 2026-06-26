@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyCheck — Testador de Teclado e Mouse</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="brand">
+        <span class="brand-icon">⌨</span>
+        <span>KeyCheck</span>
+      </div>
+      <a class="github-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+
+    <section class="hero-content">
+      <p class="eyebrow">Ferramenta para suporte e infraestrutura</p>
+      <h1>Teste teclado e mouse em poucos segundos</h1>
+      <p class="hero-description">
+        Pressione qualquer tecla ou clique nos botões do mouse para verificar se o dispositivo está respondendo corretamente.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#keyboard" class="button primary">Testar agora</a>
+        <button class="button secondary" id="clearButton" type="button">Limpar testes</button>
+      </div>
+    </section>
+  </header>
+
+  <main class="container">
+    <section class="status-grid">
+      <article class="status-card">
+        <span>Última tecla</span>
+        <strong id="lastKey">Nenhuma</strong>
+      </article>
+
+      <article class="status-card">
+        <span>Código</span>
+        <strong id="lastCode">-</strong>
+      </article>
+
+      <article class="status-card">
+        <span>Teclas testadas</span>
+        <strong id="testedCount">0</strong>
+      </article>
+
+      <article class="status-card">
+        <span>Mouse</span>
+        <strong id="mouseStatus">Aguardando</strong>
+      </article>
+    </section>
+
+    <section class="panel" id="keyboard">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Teclado</p>
+          <h2>Mapa visual das teclas</h2>
+        </div>
+
+        <div class="layout-switcher">
+          <button class="layout-button active" id="brLayoutButton" type="button">BR</button>
+          <button class="layout-button" id="usLayoutButton" type="button">US</button>
+        </div>
+      </div>
+
+      <p class="hint">
+        As teclas pressionadas ficam destacadas automaticamente. Use o seletor para alternar entre teclado brasileiro e americano.
+      </p>
+
+      <div class="keyboard-box">
+        <div class="keyboard" id="keyboardLayout"></div>
+
+        <div class="legend">
+          <span><strong class="legend-key default">A</strong> Tecla não acionada</span>
+          <span><strong class="legend-key pressed">A</strong> Tecla acionada</span>
+          <span><strong class="legend-key released">A</strong> Tecla liberada</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Mouse</p>
+          <h2>Teste de botões</h2>
+        </div>
+        <p class="hint">Clique dentro da área abaixo para testar.</p>
+      </div>
+
+      <div class="mouse-area" id="mouseArea">
+        <div class="mouse">
+          <button class="mouse-button" id="leftButton" type="button">Esquerdo</button>
+          <button class="mouse-button" id="middleButton" type="button">Meio</button>
+          <button class="mouse-button" id="rightButton" type="button">Direito</button>
+        </div>
+        <p id="mouseMessage">Nenhum clique detectado.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Histórico</p>
+          <h2>Últimos eventos</h2>
+        </div>
+      </div>
+
+      <ul class="event-list" id="eventList">
+        <li>Nenhum evento registrado.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Desenvolvido para técnicos, analistas de infraestrutura e suporte de TI.
+  </footer>
+
+  <script src="src/script.js"></script>
+</body>
+</html>
